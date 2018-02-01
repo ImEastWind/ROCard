@@ -1,7 +1,28 @@
 ﻿//program init point
-function init(){
-  new Chartist.Line('#chart1', {
-    labels: [1, 2, 3, 4],
-    series: [[100, 120, 180, 200]]
-  });
+function _init(){
+	debugger;
+	//get card data
+	var aData = JSON.parse(_CardData);
+	
+new Chartist.Line('.ct-chart', {
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  series: [
+    [5, -4, 3, 7, 20, 10, 3, 4, 8, -10, 6, -8]
+  ]
+}, {
+  showArea: true,
+  axisY: {
+    onlyInteger: true
+  },
+  plugins: [
+    Chartist.plugins.ctThreshold({
+      threshold: 4
+    })
+  ]
+});
+  	
+//  new Chartist.Line('#chart1', {
+//    labels: [1, 2, 3, 4],
+//    series: [[100, 120, 180, 200]]
+//  });
 }

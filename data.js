@@ -1,0 +1,1 @@
+﻿var _CardData = '[{"name":"card01"},{"name":"card02"}]';
