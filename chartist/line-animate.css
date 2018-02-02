@@ -1,0 +1,15 @@
+﻿/*http://jsbin.com/jovuh/edit?css,output*/
+@keyframes dashoffset-seven {
+  0% {
+    stroke-dashoffset: 12px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+.ct-chart .ct-series.ct-series-a .ct-line {
+  stroke-width: 5px;
+  stroke-dasharray: 6px 6px;
+  animation: dashoffset-seven 550ms infinite linear;
+}
