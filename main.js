@@ -1,11 +1,12 @@
 ﻿var _CarType=[{'ID':'1', 'Name':'武器'},{'ID':'2', 'Name':'副手'},{'ID':'3', 'Name':'盔甲'},{'ID':'4', 'Name':'披風'},{'ID':'5', 'Name':'鞋子'},{'ID':'6', 'Name':'飾品'},{'ID':'7', 'Name':'頭飾'}];
-var c1,c2;
+var c1,c2,overlay;
 
 //program init point
 function _init(){
   var oCB = $("#CardBlocks");
   c1=$("#C1");
   c2=$("#C2");
+  overlay=$(".overlay");
 
 	//Get card data.
 	var aData = JSON.parse(_CardData);
@@ -28,12 +29,14 @@ function _init(){
   //bind card click event
   oCB.delegate(".col", "click", function() {
     openChart($(this).data("objCard"));
+    overlay.show();
+    disableScroll();
   });
 
   //bind return button click event
   c2.find(".btnPanel").on("click",function(){
-    c2.hide();
-    c1.show();
+    overlay.hide();
+    enableScroll();
   });
   
 }
@@ -42,11 +45,9 @@ function openChart(vCard){
   //card info.
   c2.find("span[id='TypeName']").text(getCarTypeName(vCard.Type));
   c2.find("span[id='CardName']").text(vCard.Name);
-debugger;
-  var iP;
 
   //remove empty price and its mapping datadate.
-  var aPrice=[],aDataDate=[];
+  var aPrice=[],aDataDate=[],iP;
   $.each(vCard.Price,function(i,v){
     iP=myParseInt(v);    
     if(iP>0){
@@ -56,6 +57,7 @@ debugger;
   })
 
   if (aPrice.length==0){
+    overlay.hide();
     alert('還沒有這張卡片的紀錄喔!');
     return;
   }
@@ -71,12 +73,6 @@ debugger;
   c2.find(".latest").text(numberWithCommas(aPrice[aPrice.length-1]));
   c2.find(".hightest").text(numberWithCommas(hightest));
   c2.find(".lowest").text(numberWithCommas(lowest));
-
-  //display
-  c1.hide();
-  c2.width(c1.width());
-  c2.height("100%");
-  c2.show();
 
   //Gen chart.
   new Chartist.Line('.ct-chart', {
@@ -117,4 +113,37 @@ function myParseInt(vNum){
 
 function numberWithCommas(v){
   return v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+//lock scroll bar
+// left: 37, up: 38, right: 39, down: 40,
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+  e.returnValue = false;  
+}
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+function disableScroll() {
+  if (window.addEventListener) // older FF
+      window.addEventListener('DOMMouseScroll', preventDefault, false);
+  window.onwheel = preventDefault; // modern standard
+  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+  window.ontouchmove  = preventDefault; // mobile
+  document.onkeydown  = preventDefaultForScrollKeys;
+}
+function enableScroll() {
+    if (window.removeEventListener)
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.onmousewheel = document.onmousewheel = null; 
+    window.onwheel = null; 
+    window.ontouchmove = null;  
+    document.onkeydown = null;  
 }

@@ -3,10 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>[iRO]交易所物價走勢(台服)</title>
-	<script
-	src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-	integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-	crossorigin="anonymous"></script>
+	<script type='text/javascript' src='http://code.jquery.com/jquery-2.2.4.min.js'></script>
 	<script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 	<script src="chartist\chartist-plugin-threshold.min.js"></script>
@@ -26,27 +23,29 @@
   </div>  
   <div id="CardBlocks"></div>
 </div>
-<div id="C2" class="container" style="display:none">
+<div class="overlay" style="display:none">
+	<div id="C2" class="container">
 	<div class="btnPanel"><div class="returnBtn">↼返回</div></div>
 	<div class="contentPanel">
-	<div class="cardInfo"><span id="TypeName"></span>/<span id="CardName"></span></div>
-	<table>
-	  <tr>
-	    <td width="230px" class="latest-title">最新價格</td>
-	    <td class="latest"></td>
-	  </tr>
-	  <tr>
-	    <td>歷史最高(本站紀錄)</td>
-	    <td class="hightest"></td>
-	  </tr>
-	  <tr>
-	    <td>歷史最低(本站紀錄)</td>
-	    <td class="lowest"></td>
-	  </tr>
-	</table>
+		<div class="cardInfo"><span id="TypeName"></span>/<span id="CardName"></span></div>
+		<table>
+		  <tr>
+		    <td width="230px" class="latest-title">最新價格</td>
+		    <td class="latest"></td>
+		  </tr>
+		  <tr>
+		    <td>歷史最高(本站紀錄)</td>
+		    <td class="hightest"></td>
+		  </tr>
+		  <tr>
+		    <td>歷史最低(本站紀錄)</td>
+		    <td class="lowest"></td>
+		  </tr>
+		</table>
 	</div>
 	<div class="ct-chart ct-golden-section" id="chart1"></div>
-</div>
+</div>	
+
 <script>
   _init();
 </script>
