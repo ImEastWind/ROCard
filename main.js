@@ -1,12 +1,11 @@
 ﻿var _CarType=[{'ID':'1', 'Name':'武器'},{'ID':'2', 'Name':'副手'},{'ID':'3', 'Name':'盔甲'},{'ID':'4', 'Name':'披風'},{'ID':'5', 'Name':'鞋子'},{'ID':'6', 'Name':'飾品'},{'ID':'7', 'Name':'頭飾'}];
-var c1,c2,overlay;
+var c1,c2;
 
 //program init point
 function _init(){
   var oCB = $("#CardBlocks");
   c1=$("#C1");
   c2=$("#C2");
-  overlay=$(".overlay");
 
 	//Get card data.
 	var aData = JSON.parse(_CardData);
@@ -29,19 +28,22 @@ function _init(){
   //bind card click event
   oCB.delegate(".col", "click", function() {
     openChart($(this).data("objCard"));
-    overlay.show();
     disableScroll();
   });
 
   //bind return button click event
   c2.find(".btnPanel").on("click",function(){
-    overlay.hide();
+    $(".overlay").hide();
     enableScroll();
   });
   
 }
 
 function openChart(vCard){
+  //show overlay
+  var overlay=$(".overlay");
+  overlay.show();
+
   //card info.
   c2.find("span[id='TypeName']").text(getCarTypeName(vCard.Type));
   c2.find("span[id='CardName']").text(vCard.Name);
