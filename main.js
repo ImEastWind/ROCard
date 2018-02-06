@@ -27,23 +27,20 @@ function _init(){
 
   //bind card click event
   oCB.delegate(".col", "click", function() {
+    $(".overlay").show();
     openChart($(this).data("objCard"));
-    disableScroll();
   });
 
   //bind return button click event
   c2.find(".btnPanel").on("click",function(){
     $(".overlay").hide();
+  	$(".ct-chart").empty();
     enableScroll();
   });
   
 }
 
 function openChart(vCard){
-  //show overlay
-  var overlay=$(".overlay");
-  overlay.show();
-
   //card info.
   c2.find("span[id='TypeName']").text(getCarTypeName(vCard.Type));
   c2.find("span[id='CardName']").text(vCard.Name);
@@ -59,9 +56,11 @@ function openChart(vCard){
   })
 
   if (aPrice.length==0){
-    overlay.hide();
+    $(".overlay").hide();
     alert('還沒有這張卡片的紀錄喔!');
     return;
+  }else{
+  	  disableScroll();
   }
 
   //get price info for table
