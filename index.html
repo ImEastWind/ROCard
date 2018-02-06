@@ -21,34 +21,40 @@
 <div id="C1" class="container">
   <div>
   	<h2>[iRO]交易所物價走勢-卡片</h2>
-    <p class="HeaderText">※因人力有限，目前僅記錄交易所卡片價格資料，約2至3天記錄一次</p>
-    <p class="HeaderText">※請善用瀏覽器搜尋功能(電腦版使用Ctrl+F)以快速找到資料</p>
+    <p class="text">※因人力有限，目前僅記錄交易所卡片價格資料，約2至3天記錄一次</p>
+    <p class="text">※請善用瀏覽器搜尋功能(電腦版使用Ctrl+F)以快速找到資料</p>
   </div>  
   <div id="CardBlocks"></div>
 </div>
 <div class="overlay" style="display:none">
-	<div id="C2" class="container">
-	<div class="btnPanel"><div class="returnBtn">↼返回</div></div>
-	<div class="contentPanel">
-		<div class="cardInfo"><span id="TypeName"></span>/<span id="CardName"></span></div>
-		<table>
-		  <tr>
-		    <td width="230px" class="latest-title">最新價格</td>
-		    <td class="latest"></td>
-		  </tr>
-		  <tr>
-		    <td>歷史最高(本站紀錄)</td>
-		    <td class="hightest"></td>
-		  </tr>
-		  <tr>
-		    <td>歷史最低(本站紀錄)</td>
-		    <td class="lowest"></td>
-		  </tr>
-		</table>
+	<div id="C2" class="container" style="margin-top:10px">
+		<div class="btnPanel"><div class="returnBtn">↼返回</div></div>
+		<div class="contentPanel">
+			<div class="cardInfo"><span id="TypeName"></span>/<span id="CardName"></span></div>
+			<table>
+			  <tr>
+			    <td width="230px" class="latest-title">最新價格</td>
+			    <td class="latest"></td>
+			  </tr>
+			  <tr>
+			    <td>歷史最高(本站紀錄)</td>
+			    <td class="hightest"></td>
+			  </tr>
+			  <tr>
+			    <td>歷史最低(本站紀錄)</td>
+			    <td class="lowest"></td>
+			  </tr>
+			</table>
+		</div>
 	</div>
-	<div class="ct-chart ct-golden-section" id="chart1"></div>
+	<div class="ct-chart ct-golden-section container" id="chart1"></div>
 </div>	
-
+<div id="Footer" class="container">
+  <div align="center">
+  	<hr class='style1'></hr>
+    <p class="text">2H-東風夜放花千樹 製作</p>
+  </div>  
+</div>
 <script>
   _init();
 </script>
