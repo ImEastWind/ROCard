@@ -75,6 +75,9 @@ function openChart(vCard){
   c2.find(".hightest").text(numberWithCommas(hightest));
   c2.find(".lowest").text(numberWithCommas(lowest));
 
+  //compute threshold
+  var iThreshold = Math.round((hightest+lowest)/2);
+  
   //Gen chart.
   new Chartist.Line('.ct-chart', {
     labels: aDataDate,
@@ -93,7 +96,7 @@ function openChart(vCard){
     },
     plugins: [
       Chartist.plugins.ctThreshold({
-        threshold: 4
+        threshold: iThreshold	//4
       })
     ]
   });
