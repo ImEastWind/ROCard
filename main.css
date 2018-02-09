@@ -1,20 +1,30 @@
-@media (min-width: 1024px){
+@media (min-width: 1366px){
 	.container{
 	 	width:53%;
 	 	margin: 0 auto;
 	}
+	.gototop{
+		right:20%;
+	}
 }
-@media (min-width: 992px) and (max-width: 1024px) {
+@media (min-width: 992px) and (max-width: 1366px) {
 	.container{
-	 	width:87%;
+	 	width:85%;
 	 	margin: 0 auto;
 	}
+	.gototop{
+		right:4%;
+	}
+
 }
 @media (min-width: 0px) and (max-width: 992px) {
 	.container{
-	 	width:87%;
+	 	width:85%;
 	 	margin: 0 auto;
 	}
+	.gototop{
+		right:4%;
+	}	
 }
 body{
 	background: #EADBC4;
@@ -24,9 +34,65 @@ body{
 	background-repeat: repeat repeat;
 	font-family: Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", "標楷體", DFKai-SB, sans-serif;
 	font-size:20px;
+	cursor: default;
+}
+div.menu{
+    background-color: #453D3F;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    width: 100%;
+    box-shadow: 0 3px 0 rgba(0,0,0,.3)
+}
+div.menutitle{
+    margin-top: 5px;
+    color: white;
+}
+h1.style1{
+	font-weight: 500;
+}
+h2.style1{
+	/*background-color: #ded0ba;
+	padding: .2em;
+	box-shadow: 3px 3px 0 rgba(0,0,0,.1);*/
+	font-weight: 500;
+	/*text-align: center;*/
 }
 hr.style1{
 	border-top: 1px dashed #59922b;
+}
+div.subtitle-block{
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+div.subtitle{
+	display: inline-block;
+	background-color: #ded0ba;
+	padding: .2em;
+	box-shadow: 3px 3px 0 rgba(0,0,0,.1);
+	margin-bottom: 20px;
+	margin-right: 10px;
+	width: 150px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 26px;
+}
+div.subtitle-link{
+	display: inline-block;
+	background-color: #f9df94;
+	padding: .2em;
+	box-shadow: 3px 3px 0 rgba(0,0,0,.1);
+	margin-bottom: 20px;
+	margin-right: 10px;
+	width: 70px;
+    text-align: center;
+    cursor: pointer;
+}
+div.subtitle-link:hover{
+   background-color: #F4C63D;
+   color: white;
 }
 table {
     border-collapse: collapse;
@@ -56,16 +122,6 @@ p.caption{
 p.text{
 	font-size: 16px;
 }
-.overlay{
- 	width: 100%;
- 	height: 100%;
- 	position: fixed;
- 	top: 0;
- 	left: 0;
- 	z-index: 10;	
-	background: #EADBC4;
-	background-image:url("image/bg.png");
-}
 .block{
  	width: 100%;
  	margin-bottom: 20px;
@@ -91,6 +147,7 @@ p.text{
 }
 .btnPanel{
 	text-align: right;
+	margin-top: 30px;
 }
 .contentPanel{
 	padding: 20px;
@@ -111,4 +168,17 @@ p.text{
     text-align: center;
     cursor: pointer;
     padding: 3px;
+}
+.gototop{
+    position: fixed;
+    bottom: 60px;
+    text-align: center;
+}
+.gototop-text{
+	background-color:#F4C63D;
+	border-radius: 4px;
+	color: #1d2129;
+    padding: 8px;
+    font-size: 16px;
+    cursor: pointer;
 }
