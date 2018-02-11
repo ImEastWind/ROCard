@@ -130,6 +130,28 @@ p.text{
 	font-size: x-large;
 	font-weight: bold;
 }
+.MVPIcon{
+	width: 27px;
+    height: 27px;    
+    position: absolute;
+    top: -10px;
+    left: -7px;
+    background: url("image/bossicon.png") no-repeat;
+    background-size: 150px;
+    background-position: 0 0;
+    filter: opacity(.9);
+}
+.MiniIcon{
+	width: 27px;
+    height: 27px;
+    position: absolute;
+    top: -10px;
+    left: -7px;
+    background: url("image/bossicon.png") no-repeat;
+    background-size: 150px;
+    background-position: -30px 0px;
+    filter: opacity(.9);
+}
 .col{
  	width: 185px;
  	height: 50px;
@@ -140,6 +162,7 @@ p.text{
  	border-radius: 4px;
  	text-align: center;
  	cursor: pointer;
+ 	position: relative;
 }
 .col:hover{
    background-color: #f4c63d;
