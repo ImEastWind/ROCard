@@ -36,6 +36,10 @@ body{
 	font-size:20px;
 	cursor: default;
 }
+a{
+	text-decoration: none;
+	color: #5b4421;
+}
 div.menu{
     background-color: #453D3F;
     position: absolute;
