@@ -71,9 +71,20 @@ div.subtitle-block{
 	margin-top: 30px;
 	margin-bottom: 10px;
 }
-div.subtitle{
+div.news{
 	display: inline-block;
 	background-color: #ded0ba;
+	padding: .2em;
+	box-shadow: 3px 3px 0 rgba(0,0,0,.1);
+	margin-bottom: 20px;
+	margin-right: 10px;
+	width: 100%;
+    font-weight: 500;
+    font-size: 26px;
+}
+div.subtitle{
+	display: inline-block;
+	background-color: #F4C63D;
 	padding: .2em;
 	box-shadow: 3px 3px 0 rgba(0,0,0,.1);
 	margin-bottom: 20px;
