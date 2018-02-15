@@ -71,7 +71,22 @@ div.subtitle-block{
 	margin-top: 30px;
 	margin-bottom: 10px;
 }
-div.news{
+fieldset.news{
+	width: 95%;
+	border:1px dashed;
+	/*padding:10px;*/
+	/*margin-bottom:10px;*/
+	border-radius: 4px;
+
+
+}
+legend.news{
+	padding:5px 10px;
+	background-color:#f3837a;
+ 	color:#FFF;
+ 	border-radius: 4px;
+}
+/*div.news{
 	display: inline-block;
 	background-color: #ded0ba;
 	padding: .2em;
@@ -81,7 +96,7 @@ div.news{
 	width: 100%;
     font-weight: 500;
     font-size: 26px;
-}
+}*/
 div.subtitle{
 	display: inline-block;
 	background-color: #F4C63D;
@@ -134,8 +149,8 @@ td.lowest{
 p.caption{
 	margin-top: 10px;
 }
-p.text{
-	font-size: 16px;
+span.text{
+	font-size: 18px;
 }
 .block{
  	width: 100%;
