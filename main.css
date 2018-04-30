@@ -3,7 +3,7 @@
 	 	width:53%;
 	 	margin: 0 auto;
 	}
-	.gototop{
+	.gototop,.donate{
 		right:20%;
 	}
 }
@@ -12,7 +12,7 @@
 	 	width:85%;
 	 	margin: 0 auto;
 	}
-	.gototop{
+	.gototop,.donate{
 		right:4%;
 	}
 
@@ -22,7 +22,7 @@
 	 	width:85%;
 	 	margin: 0 auto;
 	}
-	.gototop{
+	.gototop,.donate{
 		right:4%;
 	}	
 }
@@ -228,6 +228,7 @@ p.caption{
     padding: 3px;
 }
 .gototop{
+	width: 50px;
     position: fixed;
     bottom: 60px;
     text-align: center;
@@ -239,4 +240,10 @@ p.caption{
     padding: 8px;
     font-size: 16px;
     cursor: pointer;
+}
+.donate{
+	width: 50px;
+    position: fixed;
+    bottom: 130px;
+    text-align: center;
 }
